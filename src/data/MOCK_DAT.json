@@ -1,0 +1,57 @@
+[
+    {
+        "id":   1   ,
+        "name": "Curso de Astrología"   ,
+        "description": "El curso tiene una duración de un año, este sera un viaje de autodescubrimiento."   ,
+        "price":   16000    ,
+        "category": "curso" ,
+        "img":  "https://cdn0.ecologiaverde.com/es/posts/6/7/6/cuantos_planetas_hay_en_el_sistema_solar_universo_y_via_lactea_1676_orig.jpg"        
+
+    },
+    {
+        "id":   2   ,
+        "name": "Curso de Ascendentes"   ,
+        "description":  "El mismo tiene una duración de 8 meses. El signo ascendente simboliza como te percibe la gente, cómo te percibís vos?"   ,
+        "price":   10000     ,
+        "category": "curso" ,
+        "img": "https://cdn0.ecologiaverde.com/es/posts/6/7/6/cuantos_planetas_hay_en_el_sistema_solar_universo_y_via_lactea_1676_orig.jpg"         
+
+    },
+    {
+        "id":   3   ,
+        "name": "Curso de vidas pasadas"   ,
+        "description": "Adentrate en este mágico mundo y descubrí quién fuiste, qué hiciste en tus vidas pasadas."    ,
+        "price":    7000    ,
+        "category": "curso" ,
+        "img": "https://cdn0.ecologiaverde.com/es/posts/6/7/6/cuantos_planetas_hay_en_el_sistema_solar_universo_y_via_lactea_1676_orig.jpg"         
+
+    },
+    {
+        "id":  4    ,
+        "name":  "Carta Natal"  ,
+        "description": "La carta natal, es nuestro mapa de vida. Ahí encontraremos muchas respuestas a nuestras preguntas. "    ,
+        "price":      5000  ,
+        "category": "servicios" ,
+        "img": "https://cdn0.ecologiaverde.com/es/posts/6/7/6/cuantos_planetas_hay_en_el_sistema_solar_universo_y_via_lactea_1676_orig.jpg"         
+
+    },
+    {
+        "id": 5     ,
+        "name": "Registros Akáshicos"   ,
+        "description":  "Acá tenes la posibilidad de sanar todo lo que viene de generaciones pasadas."   ,
+        "price":     3500   ,
+        "category":"servicios",
+        "img":  "https://cdn0.ecologiaverde.com/es/posts/6/7/6/cuantos_planetas_hay_en_el_sistema_solar_universo_y_via_lactea_1676_orig.jpg" 
+
+    },
+    {
+        "id":  6    ,
+        "name":  "Tarot"  ,
+        "description":  "No es una simple tirada, viene acompañada de una expericia inolvidable, no te lo podes perder."   ,
+        "price":    2500    ,
+        "category":"servicios",
+        "img":   "https://cdn0.ecologiaverde.com/es/posts/6/7/6/cuantos_planetas_hay_en_el_sistema_solar_universo_y_via_lactea_1676_orig.jpg"       
+
+    }
+]
+

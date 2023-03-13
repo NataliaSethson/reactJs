@@ -1,19 +1,28 @@
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
 import { Navbar } from "./componentes/Navbar/Navbar";
-import Carta from "./componentes/Bootstrap/Bootstrap";
+import { BrowserRouter, Route, Routes,Navigate } from "react-router-dom";
+import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer"
 
 
 
 
 function App() {
   return (
-    <div >
-   < Navbar></Navbar>
-   <ItemListContainer servicios="Cursos" duracion="1 año"/>
-   <ItemListContainer servicios="Carta Astral" duracion="1 mes"/>
-   <Carta></Carta>
+    <BrowserRouter>
+    < Navbar/>
+            <Routes>
+     <Route path="/" element={ <ItemListContainer/> }/>
+     <Route path="items/:categoryId" element={ <ItemListContainer/> }/>
+     <Route path="detail/:itemId" element={<ItemDetailContainer/>}/>
+     <Route path="*" element={<Navigate to="/"/>}/>
+        </Routes>
+      <div >
+
+   
    
     </div>
+    </BrowserRouter>
+  
     
   );
 }
