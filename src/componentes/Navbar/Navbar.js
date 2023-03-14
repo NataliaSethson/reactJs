@@ -12,6 +12,7 @@ export const Navbar =()=>{
             
            < Link to="items/curso" className="link_nav">CURSOS</Link>
            < Link to="items/servicios" className="link_nav">SERVICIOS</Link>
+         
            
          </nav>
         </div>

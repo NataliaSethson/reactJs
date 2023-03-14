@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MOCK_DAT from "../../data/MOCK_DAT.json";
-import ItemDetail from "../ItemDetail/ItemDetail";
+import { ItemDetail } from "../ItemDetail/ItemDetail";
 
 
 
@@ -18,19 +18,19 @@ const pedirDato = (id) => {
 
 const ItemDetailContainer=()=>{
 
-const [item ,setItem]=useState(null)
+const [item ,setItem]=useState(null);
+const [loading, setLoading]=useState(true);
 
 
-
-const {itemId} =useParams()
+const {itemId} =useParams();
 
 
 
 useEffect(() => {
-   
-    pedirDato(Number(itemId))
+   pedirDato(Number(itemId))
     .then((response)=>{
-        setItem(response)
+        setItem(response);
+        setLoading(false);
     }
     )
 
@@ -39,8 +39,12 @@ useEffect(() => {
     
             return(
                 <div>
-                    <ItemDetail item = {item}/>
-                </div>
+                {loading ? (
+                  <p>Cargando...</p>
+                ) : (
+                  <ItemDetail item={item} />
+                )}
+              </div>
               
                  
             )

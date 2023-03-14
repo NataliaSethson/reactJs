@@ -1,13 +1,14 @@
-
-const ItemDetail = ({items}) => {
+export const ItemDetail = ({item}) => {
     return(
         <div>
-        <img src={items.img}alt={items.name}/>
-         <h3 className="name">{items.name}</h3>
-         <p className="description">{items.description}</p>
-         <p className="price">Precio:${items.price}</p>
+        <img src={item.img}alt={item.name}/>
+         <h3 className="name">{item.name}</h3>
+         <p className="description">{item.description}</p>
+         <p className="price">Precio:${item.price}</p>
          </div>
+            
+        
          
     )}
 
-    export default ItemDetail
+    

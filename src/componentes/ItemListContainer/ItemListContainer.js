@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 
 
 
+
 const pedirDatos = () => {
         
     return new Promise(( resolve, reject) => {
@@ -40,15 +41,15 @@ const ItemListContainer = () => {
 },[categoryId] )
 
 return(
-    <div>
+    <div className='row my-5'>
            {
             items.map((el) => (
-                <div className="divContainer" key={el.id}>
+                <div className='key' key={el.id}>
                  <img src={el.img}alt={el.name}/>
                  <h3 className="name">{el.name}</h3>
                  <p className="description">{el.description}</p>
                  <p className="price">Precio:${el.price}</p>
-                 <Link to ={`/detail/${ el.id }`} className="btn btn-primary">VER MÁS</Link>
+                 <Link to ={`/detail/${ el.id }`} className="boton">VER MÁS</Link>
                 </div> 
              )
                  )
