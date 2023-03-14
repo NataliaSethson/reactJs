@@ -21,7 +21,6 @@ const ItemListContainer = () => {
 
     const [items, setItems] = useState ([])
     const { categoryId }=useParams()
-    const{itemId}=useParams
     console.log(categoryId)
 
  useEffect (() => {
@@ -49,7 +48,7 @@ return(
                  <h3 className="name">{el.name}</h3>
                  <p className="description">{el.description}</p>
                  <p className="price">Precio:${el.price}</p>
-                 <Link to ={`/detail/${ itemId }`} className="btn btn-primary">VER MÁS</Link>
+                 <Link to ={`/detail/${ el.id }`} className="btn btn-primary">VER MÁS</Link>
                 </div> 
              )
                  )
