@@ -1,25 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import MOCK_DAT from "../../data/MOCK_DAT.json";
-import { ItemDetail } from "../ItemDetail/ItemDetail";
+import { db } from "../../firebase/config"
+import  ItemDetail  from "../ItemDetail/ItemDetail";
+import {doc, getDoc} from "firebase/firestore";
 
 
 
 
-const pedirDato = (id) => {
-        
-    return new Promise(( resolve, reject) => {
-        setTimeout( () => {
-            resolve(MOCK_DAT.find(item=>item.id === id))
-
-        },1000)
-})}
-
-
-const ItemDetailContainer=()=>{
+ export const ItemDetailContainer=()=>{
 
 const [item ,setItem]=useState(null);
-const [loading, setLoading]=useState(true);
 
 
 const {itemId} =useParams();
@@ -27,23 +17,21 @@ const {itemId} =useParams();
 
 
 useEffect(() => {
-   pedirDato(Number(itemId))
-    .then((response)=>{
-        setItem(response);
-        setLoading(false);
-    }
-    )
+   const docRef = doc(db, "productos", itemId)
+   getDoc(docRef)
+   setItem({id: doc.id,
+  ...doc.data()})
+  
 
 }, [itemId])
 
     
             return(
                 <div>
-                {loading ? (
-                  <p>Cargando...</p>
-                ) : (
-                  <ItemDetail item={item} />
-                )}
+
+                  
+                 <ItemDetail item={item} />
+                
               </div>
               
                  
