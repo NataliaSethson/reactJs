@@ -3,13 +3,13 @@ import { useState } from "react"
 
 
 const ItemCount =({max,handleAgregar}) =>{
-    const [cantidad,SetCantidad]=useState(1)
+    const [cantidad,setCantidad]=useState(1)
 
     const handleSumar=()=>{
-        cantidad <max && SetCantidad(cantidad +1)}
+        cantidad <max && setCantidad(cantidad +1)}
 
         const handleRestar=()=>{
-            cantidad>1&&(cantidad-1)}
+            cantidad>1&& setCantidad(cantidad-1)}
     
  return(
     <>

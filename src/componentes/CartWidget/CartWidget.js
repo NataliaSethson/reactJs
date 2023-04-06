@@ -1,8 +1,7 @@
 import { useContext } from 'react'
-import { MdAddShoppingCart  } from 'react-icons/fa'
+import { FaShoppingCart } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../Context/CartContext'
-import './CartWidget.scss'
 
 const CartWidget = () => {
 
@@ -10,7 +9,7 @@ const CartWidget = () => {
 
     return (
         <Link to="/cart" className={`cart-widget ${cart.length > 0 ? 'cart-widget-active' : ''}`}>
-            <MdAddShoppingCart  />
+            <FaShoppingCart />
             <span>{totalCantidad()}</span>
         </Link>
     )

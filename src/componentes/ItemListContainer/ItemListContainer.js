@@ -1,14 +1,15 @@
 import "./ItemListContainer.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import {collection, getDocs, query, where} from "firebase/firestore";
 import { db } from "../../firebase/config";
+import ItemList from "../ItemList/ItemList";
 
 
 const ItemListContainer = () => {
 
-    const [items, setItems] = useState ([1])
+    const [productos, setProductos] = useState ([1])
+    const [loading, setLoading]= useState(true)
     const { categoryId }=useParams()
     
 
@@ -21,35 +22,27 @@ const ItemListContainer = () => {
 
   getDocs(q)
             .then((res) => {
+                setLoading(true)
                 const docs = res.docs.map((doc) => {
                     return {...doc.data(), id: doc.id}
                 }) 
-                setItems(docs)
+                setProductos(docs)
+            })
+            .finally(() => {
+                setLoading(false)
             })
             
         
     }, [categoryId])
 
-return(
-    <div className='row my-5'>
-           {
-            items.map((el) => (
-                <div className='key' key={el.id}>
-                 <img src={el.img}alt={el.name}/>
-                 <div className="containerItem">
-                 <h3 className="name">{el.name}</h3>
-                 <p className="description">{el.description}</p>
-                 <p className="price">Precio:${el.price}</p>
-                 <Link to ={`/detail/${ el.id }`} className="boton">VER MÁS</Link>
-                 </div>
-                </div> 
-             )
-                 )
-           } 
-
-    </div>
-  
-)
+    return (
+        <div className="contenedor">
+            {loading 
+                ? <h2>Cargando..</h2>
+                : <ItemList items={productos}/>
+            }
+        </div>
+    )
 }
 
 export default ItemListContainer
