@@ -1,26 +1,38 @@
-import { useState } from "react"
+const ItemCount = ( {max, cantidad, setCantidad, handleAgregar} ) => {
 
+    const handleSumar = () => {
+        cantidad < max && setCantidad(cantidad + 1)
+    }
 
+    const handleRestar = () => {
+        cantidad > 1 && setCantidad(cantidad - 1)
+    }
 
-const ItemCount =({max,handleAgregar}) =>{
-    const [cantidad,setCantidad]=useState(1)
+    return (
+        <div className="my-3">
+            <button 
+                onClick={handleRestar} 
+                className={`btn boton ${cantidad === 1 ? "btn-outline-danger" : "btn-outline-primary"}`}
+                
+                disabled={cantidad === 1}
+            >
+                -
+            </button>
 
-    const handleSumar=()=>{
-        cantidad <max && setCantidad(cantidad +1)}
+            <span className="mx-2">{cantidad}</span>
 
-        const handleRestar=()=>{
-            cantidad>1&& setCantidad(cantidad-1)}
-    
- return(
-    <>
-    <button onClick={handleRestar}> </button>
-    <span className="" {...cantidad}></span>
-    <button onClick={handleSumar}></button>
-    <button onClick={handleAgregar}>Agregar al Carrito</button>
-    </>
+            <button 
+                onClick={handleSumar} 
+                className={cantidad === max ? "btn btn-danger" : "btn btn-primary"}
+                disabled={cantidad === max}
+            >
+                +
+            </button>
 
-  
- )
+            <br/>
+            <button onClick={handleAgregar} className="btn btn-success my-2">Agregar al carrito</button>
+        </div>
+    )
 }
 
 export default ItemCount

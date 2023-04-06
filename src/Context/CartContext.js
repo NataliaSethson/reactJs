@@ -1,4 +1,6 @@
 import { createContext, useEffect, useState } from "react";
+import swal from 'sweetalert';
+
 
 export const CartContext = createContext()
 
@@ -10,6 +12,9 @@ const CartProvider = ( {children} ) => {
   
     const agregarAlCarrito = (item) => {
       setCart([...cart, item])
+      swal({
+        text: "Producto agrgegado!",
+      });
     }
   
     const isInCart = (id) => {
@@ -26,10 +31,17 @@ const CartProvider = ( {children} ) => {
 
     const vaciarCarrito = () => {
         setCart([])
+        swal({
+          text: "Carrito vacío",
+        });
     }
 
     const eliminarDelCarrito = (id) => {
         setCart( cart.filter((prod) => prod.id !== id) )
+        swal({
+          text: "Eliminar del carrito",
+        });
+        
     }
 
     useEffect(() => {

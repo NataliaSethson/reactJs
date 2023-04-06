@@ -1,7 +1,9 @@
-import { useContext } from "react";
+import "./Cart.css"
+import { useContext } from "react"
 import{CartContext} from "../../Context/CartContext";
 import { MdAddShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
+
 
 
 
@@ -11,9 +13,9 @@ import { Link } from "react-router-dom";
         if (cart.length === 0) {
             return (
                 <div className="container my-5">
-                    <h2>No tienes productos agregados</h2>
+                    <h2 className="cartTitle">No tienes productos agregados</h2>
                     <hr/>
-                    <Link to="/" className="btn btn-primary">Ir a comprar</Link>
+                    <Link to="/" className="irAComprar">Ir a comprar</Link>
                 </div>
             )
         }
