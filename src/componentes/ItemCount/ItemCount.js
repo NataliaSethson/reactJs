@@ -1,3 +1,6 @@
+import "./ItemCount.css"
+
+
 const ItemCount = ( {max, cantidad, setCantidad, handleAgregar} ) => {
 
     const handleSumar = () => {
@@ -9,7 +12,7 @@ const ItemCount = ( {max, cantidad, setCantidad, handleAgregar} ) => {
     }
 
     return (
-        <div className="my-3">
+        <div className="contador">
             <button 
                 onClick={handleRestar} 
                 className={`btn boton ${cantidad === 1 ? "btn-outline-danger" : "btn-outline-primary"}`}

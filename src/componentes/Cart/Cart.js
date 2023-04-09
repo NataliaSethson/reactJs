@@ -15,7 +15,10 @@ import { Link } from "react-router-dom";
                 <div className="container my-5">
                     <h2 className="cartTitle">No tienes productos agregados</h2>
                     <hr/>
+                    <button>
                     <Link to="/" className="irAComprar">Ir a comprar</Link>
+                    </button>
+                
                 </div>
             )
         }

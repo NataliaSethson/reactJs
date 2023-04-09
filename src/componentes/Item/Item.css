@@ -1,31 +1,17 @@
-.itemTitle{
+.contenedorItem{
     text-align: center;
     font-weight: bolder;
-    font-size: 20px;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-.itemDesc{
-    text-align: center;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight:lighter;
     font-size: 15px;
-}
-
-.itemPrice{
-    text-align: center;
     font-family:Arial, Helvetica, sans-serif;
-    font-weight: bolder;
-    font-size: 20px;
+    margin: 3px 10px 10px 10px;
+    padding: 10px 5px 15px 10px;
+  
 }
-
 
 .itemLink{
     list-style: none;
     text-decoration: none;
     background-color: rgb(161, 234, 234);
     color: black;
-    font-family:Arial, Helvetica, sans-serif;
     font-size: 20px;
-    font-weight: bold;
 }
