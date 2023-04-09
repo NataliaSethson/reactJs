@@ -10,9 +10,9 @@ export const Navbar =()=>{
         <div className="contenedor_nav">
             <h1>ASTROLOGÍA MILLENNIAL</h1>
             <nav className="barra_nav">
-            
-           < Link to="items/curso" className="link_nav">CURSOS</Link>
-           < Link to="items/servicios" className="link_nav">SERVICIOS</Link>
+            < Link to="items/curso" className="link_nav">CURSOS</Link>
+          < Link to="items/servicios" className="link_nav">SERVICIOS</Link>
+           
          
            
          </nav>

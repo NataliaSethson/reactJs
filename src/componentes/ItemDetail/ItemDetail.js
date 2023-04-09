@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import "./ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount";
 import { Link, useNavigate } from "react-router-dom";
 import {CartContext} from "../../Context/CartContext";
@@ -28,17 +29,21 @@ import {CartContext} from "../../Context/CartContext";
 
     return(
 
-        <div>
+        <div className="contenedorItem">
          <img src={item.img}alt={item.name}/>
          <h3 className="name">{item.name}</h3>
          <p className="description">{item.description}</p>
          <p className="price">Precio:${item.price}</p>
        
-   
+      <tr></tr>
         
        { 
         isInCart(item.id)
-        ? <Link to ="/cart" className = "btn btn-success my-2">Terminar mi compra</Link>
+        ? 
+        <button>
+         <Link to ="/cart" className = "terminarCompra">Terminar mi compra</Link>
+        </button>
+      
         : <ItemCount 
         max = {item.stock}
         cantidad= {cantidad}
@@ -47,7 +52,7 @@ import {CartContext} from "../../Context/CartContext";
 
        />
        }
-
+        <tr></tr>
        <button onClick={handleVolver} className="btn btn-primary">Volver</button>
         
             
