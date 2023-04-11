@@ -24,9 +24,14 @@ img{
 
 
 
-.boton{
-    text-decoration: none;
+.cargandoListado{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-top: 15px;
+    background-color: rgb(176, 160, 191);
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 
-    
 }

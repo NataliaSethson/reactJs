@@ -27,8 +27,8 @@ import { Link } from "react-router-dom";
 
 
     return (
-        <div className="">
-            <h2>Tu compra</h2>
+        <div className="cartContenedor">
+            <h2>TU COMPRA:</h2>
             <hr/>
 
             {
@@ -52,7 +52,12 @@ import { Link } from "react-router-dom";
 
             <h3>TOTAL: ${totalCompra().toFixed(2)}</h3>
             <button onClick={vaciarCarrito} className="btn btn-danger">Vaciar mi carrito</button>
-            <Link className="btn btn-success" to="/checkout">Terminar compra</Link>
+            <hr></hr>
+            <hr></hr>
+            <button className="terminarCompras">
+            <Link className="terminarCompras" to="/checkout">Terminar compra</Link>  
+            </button>
+           
         </div>
     )}
 

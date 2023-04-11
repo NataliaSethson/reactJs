@@ -1,3 +1,4 @@
+import "./CheckOut.css"
 import { useContext, useState } from "react"
 import { Link, Navigate } from "react-router-dom"
 import { CartContext } from "../../Context/CartContext"
@@ -8,7 +9,7 @@ import * as Yup from 'yup';
 
 const schema = Yup.object().shape({
     nombre: Yup.string()
-                .required('Este campo es obligatorio')
+                .required ('Este campo es obligatorio')
                 .min(4, 'Mínimo 4 caracteres')
                 .max(30, 'Máximo 30 caracteres'),
     direccion: Yup.string()
@@ -84,11 +85,11 @@ const Checkout = () => {
     } 
 
     return (
-        <div className="container my-5">
-            <h2>Checkout</h2>
+        <div className="containerForm">
+            <h2 className="titleCheck">CHECK OUT</h2>
             <hr/>
 
-            <Formik
+            <Formik 
                 initialValues={{
                     nombre: '',
                     direccion: '',
@@ -99,6 +100,7 @@ const Checkout = () => {
             >
                 {( {values, errors, handleChange, handleSubmit, isSubmitting} ) => (
                     <form onSubmit={handleSubmit}>
+                        <label>Ingresa tu nombre:  </label>
                         <input 
                             onChange={handleChange}
                             value={values.nombre}
@@ -106,9 +108,12 @@ const Checkout = () => {
                             placeholder='Tu nombre'
                             className="form-control my-2"
                             name="nombre"
+                            
                         />
                         {errors.nombre && <p className="alert alert-danger">{errors.nombre}</p>}
-
+                        <br></br>
+                        <br></br>
+                        <label>Ingresa tu direccion:   </label>
                         <input 
                             onChange={handleChange}
                             value={values.direccion}
@@ -119,17 +124,20 @@ const Checkout = () => {
                         />
                         {errors.direccion && <p className="alert alert-danger">{errors.direccion}</p>}
 
+                        <br></br>
+                        <br></br>                       
+                        <label>Ingresa tu email:  </label>
                         <input 
                             onChange={handleChange}
                             value={values.email}
                             type={'email'}
-                            placeholder='Tu Email'
+                            placeholder= 'Tu Email'
                             className="form-control my-2"
                             name="email"
                         />
                         {errors.email && <p className="alert alert-danger">{errors.email}</p>}
-
-
+                        <br></br>
+                        <br></br>
                         <button className="btn btn-primary" type="submit" disabled={isSubmitting}>Enviar</button>
                     </form>
                 )}
