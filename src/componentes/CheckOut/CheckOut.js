@@ -4,6 +4,7 @@ import { Link, Navigate } from "react-router-dom"
 import { CartContext } from "../../Context/CartContext"
 import { db } from "../../firebase/config"
 import { collection, query, where, addDoc, writeBatch, documentId, getDocs } from "firebase/firestore"
+import swal from 'sweetalert';
 import { Formik } from 'formik'
 import * as Yup from 'yup';
 
@@ -64,18 +65,24 @@ const Checkout = () => {
                     vaciarCarrito()
                 })
         } else {
-            alert("Hay items sin stock")
+            swal({
+                text: "Hay items sin stock!",
+              });
+        
         }
     }
 
 
     if (orderId) {
         return (
-            <div className="container my-5">
-                <h2>Tu orden se registró con éxito!</h2>
+            <div className="constOrder">
+                <h2 className="constOrder">Tu orden se registró con éxito!</h2>
                 <hr/>
-                <p>Guarda tu número de orden: {orderId}</p>
+                <p className="constOrder"> Guarda tu número de orden: {orderId}</p>
+                <button className="checkVolver">
                 <Link className="btn btn-primary my-3" to="/">Volver al inicio</Link>
+                </button>
+                
             </div>
         )
     }
